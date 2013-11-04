@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <table>
+      {% for item in filelist %}
+      <tr>
+	<td>{{ item.type }}</td>
+	<td><a href="{{ item.url }}">{{ item.filename }}</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
