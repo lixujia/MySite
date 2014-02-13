@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ jquery_ui_css }}" />
+    <script src="{{ jquery_path }}"></script>
+    <script src="{{ jquery_ui_path }}"></script>
+    <script>
+      $(function() {
+      $( "a.path, button" )
+      .button()
+      });
+  </script>
+  </head>
+  <body>
+    位置：
+    {% for seg in pathlist %}
+    <a class="path" href="{{ seg.url }}">{{ seg.name }}</a>
+    {% endfor %}
+    <table>
+      {% for item in filelist %}
+      <tr>
+        <td><img src="{{ item.icon }}" height=24 width=24></td>
+	<td><a href="{{ item.url }}">{{ item.filename }}</a></td>
+        <td>{{ item.size }}</td>
+        <td>{{ item.mtime }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

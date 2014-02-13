@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    制造商,产品型号,产品条码号,硬件版本号,生产日期,生产批次 <br />
+    {% for record in record_lst %}
+    {{ record.vendor  }},
+    {{ record.product }},
+    {{ record.sn      }},
+    {{ record.hver    }},
+    {{ record.pdate   }},
+    {{ record.batch   }}
+    <br />
+{% endfor %}
+    
+  </body>
+
+<html>
